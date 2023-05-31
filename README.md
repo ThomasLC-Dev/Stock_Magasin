@@ -12,6 +12,43 @@ Il s'agit ici d'un rendu sous le format d'une API REST.
 **API:** Java, Spring boot
 
 **Base de données:** PostgreSQL
+## Lancer l'application
+
+Cloner le projet
+
+```bash
+  git clone https://github.com/ThomasLC-Dev/Stock_Magasin.git
+```
+
+Modifier le fichier application.properties avec les données de votre base de données, à la place des instructions entre accolades.
+```bash
+  spring.datasource.url=jdbc:postgresql://{HOTE_DB}:{PORT_DB}/{NOM_DB}
+  spring.datasource.username={UTILISATEUR_DB}
+  spring.datasource.password={MDP_DB}
+  spring.jpa.hibernate.ddl-auto=update
+  spring.jpa.show-sql=true
+  spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+  spring.jpa.properties.hibernate.jdbc.time_zone=UTC+1
+
+  server.port=8081
+  server.error.include-message=always
+
+  spring.jackson.default-property-inclusion = NON_NULL
+```
+
+Build l'application
+
+```bash
+  mvn install
+```
+
+Démarrer l'application
+
+```bash
+  java -jar target/stock-0.0.1-SNAPSHOT.jar
+```
+
+
 ## Documenation API
 
 ### Produits
